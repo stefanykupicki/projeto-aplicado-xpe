@@ -19,7 +19,7 @@ class Card {
     card.appendChild(img);
     cardsList.appendChild(card);
 
-    return card;
+    return cardList;
   }
 }
 
