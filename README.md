@@ -1,0 +1,5 @@
+# PROJETO APLICADO - XPE
+
+## INSTRUÇÕES PARA RODAR O PROJETO
+
+- Clonar repositório
