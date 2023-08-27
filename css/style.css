@@ -10,11 +10,23 @@
 
 /* estilos de header  */
 #header {
-  background-color: orangered;
+  background-color: transparent;
 }
 
 #header div {
   display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+#logo-img {
+  width: 60px;
+  height: 60px;
+  margin-left: 25px;
+}
+
+#notification-icon {
+  margin-right: 25px;
 }
 
 
