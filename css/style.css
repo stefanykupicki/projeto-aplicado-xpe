@@ -38,6 +38,30 @@
   height: 55px;
 }
 
+#categories-names {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: transparent;
+  padding: 20px;
+}
+
+#buttons {
+  display: flex;
+  gap: 5px;
+  margin-left: 10px;
+}
+#category-button {
+  padding: 5px 10px;
+  font-size: 14px;
+  background-color: #e7385b;
+  color: #fff;
+  border: none;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 
 /* estilos de lista de cards horizontal */
 #card-list {
