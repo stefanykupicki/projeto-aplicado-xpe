@@ -89,6 +89,9 @@ const init = () => {
   new Card('https://picsum.photos/200/300');
   new Card('https://picsum.photos/200/300');
   new Card('https://picsum.photos/200/300');
+  new Card('https://picsum.photos/200/300');
+  new Card('https://picsum.photos/200/300');
+  new Card('https://picsum.photos/200/300');
 
   new Game('https://picsum.photos/200/300', 'Jogo 1', 'https://picsum.photos/200/300');
   new Game('https://picsum.photos/200/300', 'Jogo 2', 'https://picsum.photos/200/300');
