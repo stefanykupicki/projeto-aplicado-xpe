@@ -66,18 +66,42 @@
 /* estilos de lista de cards horizontal */
 #card-list {
   display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+  overflow: scroll;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+#card-list::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+#card-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+#card-list::-webkit-scrollbar-thumb {
+  background: purple;
 }
 
 /* estilos do card */
 .card {
-
+  
 }
 
 .card img {
-  width: 200px;
-  height: 200px;
-  border-radius: 10%;
+  height: 185px;
+  width: 298px;
+  border-radius: 19px;
+  cursor: pointer;
+  object-fit: cover;
 }
+
 
 /* estilos de lista vertical de games */
 #game-list {
