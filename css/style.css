@@ -195,12 +195,14 @@ nav ul li div span {
 }
 
 #quiz-container {
+  padding-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 2rem;
   background-color: lightblue;
+  height: 100vh;
 }
 
 #btn-quiz-next {
@@ -234,9 +236,27 @@ nav ul li div span {
   cursor: pointer;
   transition: all 0.8s;
   width: 50%;
+  border: 1px solid #e7385b;
 }
 
 .answer:hover {
   background-color: #c91d3f;
   border: 1px solid #e94423;
 }
+
+#quiz-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background: orange;
+  border-radius: 1rem;
+}
+
+#quiz-score-text {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+

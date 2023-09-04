@@ -7,8 +7,8 @@ const appConfig = document.getElementById('app-config');
 const appQuiz = document.getElementById('app-quiz');
 const quizQuestion = document.getElementById('quiz-question');
 const quizAnswers = document.getElementById('quiz-answers');
-const btnQuizNext = document.getElementById('btn-quiz-next');
 const appbarList = document.getElementById('appbar-list');
+const quizScoreText = document.getElementById('quiz-score-text');
 
 // CRIA UM CARD COM IMAGEM E INSERE NA LISTA
 class Card {
@@ -73,17 +73,17 @@ class Answer {
 }
 
 class Question {
-  constructor(question, answers, correctAnswer) {
+  constructor(question, answers) {
     this.question = question;
     this.answers = answers;
-    this.correctAnswer = correctAnswer;
   }
 
-  start() {
+  start(onNext) {
     quizQuestion.innerText = this.question;
 
     this.answers.forEach((answer) => {
       quizAnswers.appendChild(answer.html);
+      answer.html.addEventListener('click', () => onNext(answer));
     });
   }
 
@@ -95,6 +95,7 @@ class Question {
 
 class Quiz {
   currentQuestion = 0;
+  rightAnswers = 0;
 
   constructor(questions) {
     this.questions = questions;
@@ -102,15 +103,24 @@ class Quiz {
 
   start() {
     navigateTo(appQuiz);
-    this.questions[0].start();
-
-    btnQuizNext.addEventListener('click', () => this.next());
+    this.questions[0].start(this.next.bind(this));
+    this.updateScore();
   }
 
-  next() {
+  next(answer) {
+    if (answer.correct) this.rightAnswers++;
+
     this.questions[this.currentQuestion].end();
     this.currentQuestion++;
-    this.questions[this.currentQuestion].start();
+
+    if (!this.questions[this.currentQuestion]) return;
+
+    this.updateScore();
+    this.questions[this.currentQuestion].start(this.next.bind(this));
+  }
+
+  updateScore() {
+    quizScoreText.innerText = `${this.rightAnswers} / ${this.questions.length}`;
   }
 }
 
@@ -163,22 +173,28 @@ const init = () => {
 
   const questions = [
     new Question('Qual é a capital do Brasil?', [
-      new Answer('Brasília', true),
-      new Answer('São Paulo', false),
       new Answer('Rio de Janeiro', false),
+      new Answer('São Paulo', false),
+      new Answer('Brasília', true),
       new Answer('Belo Horizonte', false),
     ]),
     new Question('Qual é a capital da Argentina?', [
+      new Answer('Rio de Janeiro', false),
       new Answer('Buenos Aires', true),
       new Answer('São Paulo', false),
-      new Answer('Rio de Janeiro', false),
       new Answer('Belo Horizonte', false),
+    ]),
+    new Question('Qual é a capital do Chile?', [
+      new Answer('Santiago', true),
+      new Answer('Belo Horizonte', false),
+      new Answer('São Paulo', false),
+      new Answer('Rio de Janeiro', false),
     ]),
   ];
 
   const quiz = new Quiz(questions);
 
-  // quiz.start();
+  quiz.start();
 
   addApplicationEvents();
 }
