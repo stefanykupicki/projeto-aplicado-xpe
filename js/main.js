@@ -5,6 +5,9 @@ const appHome = document.getElementById('app-home');
 const appRewards = document.getElementById('app-rewards');
 const appConfig = document.getElementById('app-config');
 const appQuiz = document.getElementById('app-quiz');
+const quizQuestion = document.getElementById('quiz-question');
+const quizAnswers = document.getElementById('quiz-answers');
+const btnQuizNext = document.getElementById('btn-quiz-next');
 
 // CRIA UM CARD COM IMAGEM E INSERE NA LISTA
 class Card {
@@ -51,6 +54,65 @@ class Game {
   }
 }
 
+class Answer {
+  constructor(answer, correct) {
+    this.answer = answer;
+    this.correct = correct;
+
+    const answerEl = document.createElement('div');
+    answerEl.classList.add('answer');
+
+    const text = document.createElement('p');
+    text.innerText = this.answer;
+
+    answerEl.appendChild(text);
+
+    this.html = answerEl;
+  }
+}
+
+class Question {
+  constructor(question, answers, correctAnswer) {
+    this.question = question;
+    this.answers = answers;
+    this.correctAnswer = correctAnswer;
+  }
+
+  start() {
+    quizQuestion.innerText = this.question;
+
+    this.answers.forEach((answer) => {
+      quizAnswers.appendChild(answer.html);
+    });
+  }
+
+  end() {
+    quizQuestion.innerText = '';
+    quizAnswers.innerHTML = '';
+  }
+}
+
+class Quiz {
+  currentQuestion = 0;
+
+  constructor(questions) {
+    this.questions = questions;
+  }
+
+  start() {
+    navigateTo(appQuiz);
+    this.questions[0].start();
+
+    btnQuizNext.addEventListener('click', () => this.next());
+  }
+
+  next() {
+    this.questions[this.currentQuestion].end();
+    this.currentQuestion++;
+    this.questions[this.currentQuestion].start();
+  }
+}
+
 const addApplicationEvents = () => {
   Array.from(appbar.children).forEach((button) => {
     button.addEventListener('click', function () {
@@ -80,6 +142,12 @@ const show = (element) => {
   element.classList.remove('hidden');
 }
 
+const navigateTo = (element) => {
+  const screens = [appHome, appRewards, appConfig, appQuiz]
+  screens.forEach((screen) => hide(screen));
+  show(element);
+}
+
 // FUNÇÃO DE INICIALIZAÇÃO DA APLICAÇÃO
 const init = () => {
   new Card('https://picsum.photos/200/300');
@@ -97,6 +165,25 @@ const init = () => {
   new Game('https://picsum.photos/200/300', 'Jogo 2', 'https://picsum.photos/200/300');
   new Game('https://picsum.photos/200/300', 'Jogo 3', 'https://picsum.photos/200/300');
   new Game('https://picsum.photos/200/300', 'Jogo 4', 'https://picsum.photos/200/300');
+
+  const questions = [
+    new Question('Qual é a capital do Brasil?', [
+      new Answer('Brasília', true),
+      new Answer('São Paulo', false),
+      new Answer('Rio de Janeiro', false),
+      new Answer('Belo Horizonte', false),
+    ]),
+    new Question('Qual é a capital da Argentina?', [
+      new Answer('Buenos Aires', true),
+      new Answer('São Paulo', false),
+      new Answer('Rio de Janeiro', false),
+      new Answer('Belo Horizonte', false),
+    ]),
+  ];
+
+  const quiz = new Quiz(questions);
+
+  quiz.start();
 
   addApplicationEvents();
 }
