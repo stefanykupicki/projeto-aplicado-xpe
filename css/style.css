@@ -10,7 +10,10 @@
 
 /* estilos de header  */
 #header {
-  background-color: transparent;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 #icons-div {
@@ -74,6 +77,7 @@
   width: 100%;
   margin: 2rem auto;
   padding: 1rem 1rem;
+  margin-top: 225;
 }
 
 #card-list::-webkit-scrollbar {
@@ -114,6 +118,7 @@
   display: flex;
   flex-direction: column;
   background-color: blueviolet;
+  margin-bottom: 192px;
 }
 
 .game {
@@ -131,7 +136,7 @@
 
 /* estilos de appbar */
 #appbar {
-  background-color:rgb(255, 0, 136);
+  background-color:rgb(255, 255, 255);
   height: 140px;
   width: 100%;
   position: fixed;
@@ -159,7 +164,7 @@ nav {
   position: fixed;
   bottom: 10%;
   width: 456px;
-  background-color: #e94423;
+  background-color:var(--lighter-color, white);
   left: 50%;
   margin-left: -228px;
   padding: 0 2rem;
@@ -173,7 +178,7 @@ nav ul {
   align-items: center;
 }
 
-nav :where(li,a){
+nav :where(li, a){
   position: relative;
 }
 
@@ -183,17 +188,17 @@ nav ul li a {
   justify-content: center;
   flex-direction: column-reverse;
   padding: 1em;
-  font-size: 1.25em;
+  font-size: 1.5em; /* tamanho da fonte das letras do menu */
   line-height: 1.4;
-  /* width: 80px;
-  height: 80px; */
+  width: 80px;
+  height: 80px;
   -webkit-animation: all .3s ease-in-out;
   transition: all 3s ease-out;
 }
 
 /* Cor quando passa o mouse no nav bar */
 nav ul li a:hover{
-  color: rgb(255, 255, 255);
+  color: var(--main-color); 
 }
 
 /* Tamanho da letra do nav bar */
@@ -201,6 +206,42 @@ nav ul li a span{
   font-size: 20px;
 }
 
+/* Animation */
+nav li.active a::before, nav li.active a::after{
+  content:'';
+  position: absolute;
+  background-color: pink;
+  z-index: -1;
+}
+
+nav li.active a::before{
+  top: 10px;
+  left: 10px;
+  width: calc(100% - 20px);
+  height: 100%;
+  border-radius: 30px 30px 0 0;
+}
+
+nav li.active a::before{
+  top: 10px;
+  left: 10px;
+  width: calc(100% - 30px);
+  height: 100%;
+  border-radius: 30px 30px 0 0;
+}
+
+nav li.active a::before{
+  top: 10px;
+  left: 10px;
+  width: calc(100% - 30px);
+  height: 100%;
+  border-radius: 30px 30px 0 0;
+}
 #appbar button {
 
+}
+
+@media screen and (min-width:
+1024px) {
+ #main { min-width: 1000px; }
 }
