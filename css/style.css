@@ -73,7 +73,7 @@
   overflow: scroll;
   width: 100%;
   margin: 2rem auto;
-  padding: 0 1rem;
+  padding: 1rem 1rem;
 }
 
 #card-list::-webkit-scrollbar {
@@ -100,6 +100,12 @@
   border-radius: 19px;
   cursor: pointer;
   object-fit: cover;
+  transition: all 0.3s;
+}
+
+.card img:hover {
+  transform: scale(1.1);
+  margin: 0 5px;
 }
 
 
