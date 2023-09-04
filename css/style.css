@@ -48,12 +48,14 @@
   line-height: 1.5;
   background-color: transparent;
   padding: 20px;
+  margin-top: 90px;
 }
 
 #buttons {
   display: flex;
   gap: 5px;
   margin-left: 10px;
+  overflow: auto;
 }
 #category-button {
   padding: 5px 10px;
@@ -77,7 +79,7 @@
   width: 100%;
   margin: 2rem auto;
   padding: 1rem 1rem;
-  margin-top: 225;
+  /* margin-top: 225px; */
 }
 
 #card-list::-webkit-scrollbar {
@@ -117,20 +119,48 @@
 #game-list {
   display: flex;
   flex-direction: column;
-  background-color: blueviolet;
   margin-bottom: 192px;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
 }
 
 .game {
-  
+  width: 90vw;
+  height: 89px;
+  border-radius: 10px;
+  padding: 11px;
+  overflow: hidden;
+  background: linear-gradient(45deg, #77c642, #627557);
+  display: flex;
 }
 
 .game img {
-
+  width: 68px;
+  height: 68px;
 }
 
-.game h3 {
+.game h2 {
+  margin-left: 15px;
+}
 
+.game div{
+  position: absolute;
+  right: 8vw;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  height: 67px;
+}
+
+.game button{
+  width: 80px;
+  height: 34px;
+  text-transform: uppercase;
+  background-color: #ff0000c9;
+  border-radius: 20px;
+  
 }
 
 
