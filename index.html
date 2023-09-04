@@ -8,16 +8,29 @@
     <link rel="stylesheet" href="css/style.css" />
     
     <script type="module" src="js/main.js" async defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
   </head>
   <body>
     <!-- PAGINA HOME -->
     <div id="app-home">
       <div id="header">
-        <div>
-          <h1>LOGO?</h1>
-          <h1>ICONE DE NOTIFICAÇÃO?</h1>
+        <div id="icons-div"> 
+            <img src="./img/logo-icon2.png" alt="logo do aplicativo" id="logo-img"> 
+            <h1 id="app-name">Din-din Games</h1> 
+            <img src="./img/notification_icon.png" alt="ícone de sino" id="notification-icon">
         </div>
-        <h1>Titulo</h1>
+        <div id="categories-names">
+          <h2>Categorias de Jogos</h2> 
+        </div>
+        <div id="buttons">
+            <button id="category-button" data-category="exploracao">Exploração</button>
+            <button id="category-button" data-category="contagem">Contagem</button>
+            <button id="category-button" data-category="troca">Trocas</button>
+            <button id="category-button" data-category="planejamento">Planejamento</button>
+        </div>
+
+
+
       </div>
       <div id="card-list"></div>
       <div id="game-list"></div>
@@ -55,10 +68,37 @@
         </div>
       </div>
     </div>
+    
+    <!-- NAV BAR -->
     <div id="appbar">
-      <button id="btn-home">home?</button>
+      <div class="container"> 
+        <nav> 
+          <ul>
+            <li><a href="#" id="btn-home"> <span> Home </span><i class="ri-home-5-line"></i></a></li>
+            <li><a href="#" id="btn-rewards"> <span> Rewards </span><i class="ri-store-2-line"></i></a></li>
+            <li><a href="#" id="btn-help"> <span> Help </span><i class="ri-questionnaire-line"></i></a></li>
+            <li><a href="#" id="btn-settings"> <span> Settings </span><i class="ri-settings-2-line"></i></a></li>
+          </ul>
+        </nav>
+        <section>
+          <div id="btn-home"> 
+            <h2>Home</h2>
+          </div>
+          <div id="btn-rewards"> 
+            <h2>Rewards</h2>
+          </div>
+          <div id="btn-help"> 
+            <h2>Help</h2>
+          </div>
+          <div id="btn-settings"> 
+            <h2>Settings</h2>
+          </div>
+        </section>
+      </div>
+      <!-- <button id="btn-home">home?</button>
       <button id="btn-rewards">rewards?</button>
-      <button id="btn-config">config?</button>
-    </div>
+      <button id="btn-settings">config?</button> -->
+      </div>
+    <script type="module" src="js/main.js" async defer></script>
   </body>
-</html>
+  </html>
