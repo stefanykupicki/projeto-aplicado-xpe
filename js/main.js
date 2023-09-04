@@ -8,6 +8,7 @@ const appQuiz = document.getElementById('app-quiz');
 const quizQuestion = document.getElementById('quiz-question');
 const quizAnswers = document.getElementById('quiz-answers');
 const btnQuizNext = document.getElementById('btn-quiz-next');
+const appbarList = document.getElementById('appbar-list');
 
 // CRIA UM CARD COM IMAGEM E INSERE NA LISTA
 class Card {
@@ -114,20 +115,14 @@ class Quiz {
 }
 
 const addApplicationEvents = () => {
-  Array.from(appbar.children).forEach((button) => {
+  Array.from(appbarList.children).forEach((button) => {
     button.addEventListener('click', function () {
       if (this.id == 'btn-home') {
-        hide(appRewards);
-        hide(appConfig);
-        show(appHome);
+        navigateTo(appHome);
       } else if (this.id == 'btn-rewards') {
-        hide(appHome);
-        hide(appConfig);
-        show(appRewards);
-      } else if (this.id == 'btn-config') {
-        hide(appHome);
-        hide(appRewards);
-        show(appConfig);
+        navigateTo(appRewards);
+      } else if (this.id == 'btn-settings') {
+        navigateTo(appConfig);
       }
     })
   })
@@ -183,7 +178,7 @@ const init = () => {
 
   const quiz = new Quiz(questions);
 
-  quiz.start();
+  // quiz.start();
 
   addApplicationEvents();
 }

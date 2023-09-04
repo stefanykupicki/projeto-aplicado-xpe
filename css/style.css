@@ -14,9 +14,9 @@
 }
 
 #icons-div {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
 }
 
 #logo-img {
@@ -40,7 +40,7 @@
 
 #categories-names {
   text-align: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   line-height: 1.5;
   background-color: transparent;
@@ -91,7 +91,6 @@
 
 /* estilos do card */
 .card {
-  
 }
 
 .card img {
@@ -102,7 +101,6 @@
   object-fit: cover;
 }
 
-
 /* estilos de lista vertical de games */
 #game-list {
   display: flex;
@@ -111,67 +109,53 @@
 }
 
 .game {
-  
 }
 
 .game img {
-
 }
 
 .game h3 {
-
 }
 
-
-/* estilos de appbar */
-#appbar {
-  background-color:rgb(255, 0, 136);
-  height: 140px;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-}
 
 /* Alterações pensando no #appbar, pode ser alterado futuramente. */
 
-ul{
+ul {
   list-style: none;
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
 
 .container {
-  max-width: 100%;
-  margin: 0 auto;
+  /* max-width: 100%; */
+  /* margin: 0 auto; */
 }
 
 nav {
+  width: 100%;
   position: fixed;
-  bottom: 10%;
-  width: 456px;
+  bottom: 0;
+  left: 0;
   background-color: #e94423;
-  left: 50%;
-  margin-left: -228px;
-  padding: 0 2rem;
-  border-radius: 40px;
+  border-radius: 60px 60px 0 0;
   box-shadow: rgb(50 50 93 / 25%) 0 50px 100px -20px,
-              rgb(0, 0, 0 / 30%) 0 30px 60px -30px;
+    rgb(0, 0, 0 / 30%) 0 30px 60px -30px;
 }
 
 nav ul {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
-nav :where(li,a){
+nav :where(li, a) {
   position: relative;
 }
 
-nav ul li a {
+nav ul li div {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -179,22 +163,80 @@ nav ul li a {
   padding: 1em;
   font-size: 1.25em;
   line-height: 1.4;
-  /* width: 80px;
-  height: 80px; */
-  -webkit-animation: all .3s ease-in-out;
-  transition: all 3s ease-out;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
 }
 
 /* Cor quando passa o mouse no nav bar */
-nav ul li a:hover{
+nav ul li div:hover {
   color: rgb(255, 255, 255);
 }
 
 /* Tamanho da letra do nav bar */
-nav ul li a span{
+nav ul li div span {
   font-size: 20px;
 }
 
 #appbar button {
+}
 
+/* QUIZ */
+
+#quiz-question {
+  text-align: center;
+}
+
+#quiz-answers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+#quiz-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  background-color: lightblue;
+}
+
+#btn-quiz-next {
+  outline: none;
+  border: none;
+  width: 50%;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #e7385b;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#btn-quiz-next:hover {
+  background-color: #d62c4e;
+  border: 1px solid #e94423;
+}
+
+#btn-quiz-next:disabled {
+  background-color: #ccc;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+.answer {
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #e7385b;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.8s;
+  width: 50%;
+}
+
+.answer:hover {
+  background-color: #c91d3f;
+  border: 1px solid #e94423;
 }
