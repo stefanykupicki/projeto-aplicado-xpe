@@ -9,6 +9,8 @@ const quizQuestion = document.getElementById('quiz-question');
 const quizAnswers = document.getElementById('quiz-answers');
 const appbarList = document.getElementById('appbar-list');
 const quizScoreText = document.getElementById('quiz-score-text');
+const quizRewardText = document.getElementById('quiz-reward-text');
+const quizReward = document.getElementById('quiz-reward');
 
 // CRIA UM CARD COM IMAGEM E INSERE NA LISTA
 class Card {
@@ -102,6 +104,7 @@ class Quiz {
   }
 
   start() {
+    hide(quizReward);
     navigateTo(appQuiz);
     this.questions[0].start(this.next.bind(this));
     this.updateScore();
@@ -113,10 +116,16 @@ class Quiz {
     this.questions[this.currentQuestion].end();
     this.currentQuestion++;
 
-    if (!this.questions[this.currentQuestion]) return;
+    if (!this.questions[this.currentQuestion]) return this.end();
 
     this.updateScore();
     this.questions[this.currentQuestion].start(this.next.bind(this));
+  }
+
+  end() {
+    show(quizReward);
+    quizQuestion.innerText = 'QUIZ FINALIZADO!';
+    quizRewardText.innerText = `🏆 Você ganhou ${this.rightAnswers * 1000} pontos!`;
   }
 
   updateScore() {

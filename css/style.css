@@ -5,7 +5,7 @@
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 /* estilos de header  */
@@ -254,6 +254,21 @@ nav ul li div span {
 }
 
 #quiz-score-text {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+#quiz-reward {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background: orangered;
+  border-radius: 1rem;
+}
+
+#quiz-reward-text {
   font-size: 2rem;
   font-weight: bold;
   padding: 1rem;
