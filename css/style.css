@@ -101,6 +101,7 @@
   cursor: pointer;
   object-fit: cover;
   transition: all 0.3s;
+  
 }
 
 .card img:hover {
