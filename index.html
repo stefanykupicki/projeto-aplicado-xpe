@@ -6,7 +6,7 @@
     <title>PA Boilerplate</title>
     
     <link rel="stylesheet" href="css/style.css" />
-    
+   
     <script type="module" src="js/main.js" async defer></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
   </head>
@@ -14,23 +14,34 @@
     <!-- PAGINA HOME -->
     <div id="app-home">
       <div id="header">
-        <div id="icons-div"> 
-            <img src="./img/logo-icon2.png" alt="logo do aplicativo" id="logo-img"> 
-            <h1 id="app-name">Din-din Games</h1> 
-            <img src="./img/notification_icon.png" alt="ícone de sino" id="notification-icon">
+        <div id="icons-div">
+          <img
+            src="./img/logo-icon2.png"
+            alt="logo do aplicativo"
+            id="logo-img"
+          />
+          <h1 id="app-name">Din-din Games</h1>
+          <img
+            src="./img/notification_icon.png"
+            alt="ícone de sino"
+            id="notification-icon"
+          />
         </div>
         <div id="categories-names">
-          <h2>Categorias de Jogos</h2> 
+          <h2>Categorias de Jogos</h2>
         </div>
         <div id="buttons">
-            <button id="category-button" data-category="exploracao">Exploração</button>
-            <button id="category-button" data-category="contagem">Contagem</button>
-            <button id="category-button" data-category="troca">Trocas</button>
-            <button id="category-button" data-category="planejamento">Planejamento</button>
+          <button id="category-button" data-category="exploracao">
+            Exploração
+          </button>
+          <button id="category-button" data-category="contagem">
+            Contagem
+          </button>
+          <button id="category-button" data-category="troca">Trocas</button>
+          <button id="category-button" data-category="planejamento">
+            Planejamento
+          </button>
         </div>
-
-
-
       </div>
       <div id="card-list"></div>
       <div id="game-list"></div>
@@ -42,8 +53,7 @@
           <h1>LOGO?</h1>
         </div>
         <h1>REWARDS</h1>
-        <div id="reward-list">
-        </div>
+        <div id="reward-list"></div>
       </div>
     </div>
     <!-- PAGINA CONFIG -->
@@ -53,8 +63,7 @@
           <h1>LOGO?</h1>
         </div>
         <h1>CONFIG</h1>
-        <div id="config-list">
-        </div>
+        <div id="config-list"></div>
       </div>
     </div>
     <!-- QUIZ -->
@@ -63,42 +72,36 @@
         <div>
           <h1>LOGO?</h1>
         </div>
-        <h1>PERGUNTA MAGICA DO QUIZ?</h1>
-        <div id="quiz-list">
+      </div>
+      <div id="quiz-container">
+        <h1 id="quiz-question">PERGUNTA MAGICA DO QUIZ?</h1>
+        <div id="quiz-answers"></div>
+        <div id="quiz-score">
+          <h1 id="quiz-score-text">SCORE: 0</h1>
+        </div>
+        <div id="quiz-reward" class="hidden">
+          <h1 id="quiz-reward-text"></h1>
         </div>
       </div>
     </div>
-    
+
     <!-- NAV BAR -->
-    <div id="appbar">
-      <div class="container"> 
-        <nav> 
-          <ul>
-            <li><a href="#" id="btn-home"> <span> Home </span><i class="ri-home-5-line"></i></a></li>
-            <li><a href="#" id="btn-rewards"> <span> Rewards </span><i class="ri-store-2-line"></i></a></li>
-            <li><a href="#" id="btn-help"> <span> Help </span><i class="ri-questionnaire-line"></i></a></li>
-            <li><a href="#" id="btn-settings"> <span> Settings </span><i class="ri-settings-2-line"></i></a></li>
-          </ul>
-        </nav>
-        <section>
-          <div id="btn-home"> 
-            <h2>Home</h2>
-          </div>
-          <div id="btn-rewards"> 
-            <h2>Rewards</h2>
-          </div>
-          <div id="btn-help"> 
-            <h2>Help</h2>
-          </div>
-          <div id="btn-settings"> 
-            <h2>Settings</h2>
-          </div>
-        </section>
-      </div>
-      <!-- <button id="btn-home">home?</button>
-      <button id="btn-rewards">rewards?</button>
-      <button id="btn-settings">config?</button> -->
-      </div>
+    <nav id="appbar">
+      <ul id="appbar-list">
+        <li id="btn-home">
+          <div><span> Home </span><i class="ri-home-5-line"></i></div>
+        </li>
+        <li id="btn-rewards">
+          <div><span> Rewards </span><i class="ri-store-2-line"></i></div>
+        </li>
+        <li id="btn-help">
+          <div><span> Help </span><i class="ri-questionnaire-line"></i></div>
+        </li>
+        <li id="btn-settings">
+          <div><span> Settings </span><i class="ri-settings-2-line"></i></div>
+        </li>
+      </ul>
+    </nav>
     <script type="module" src="js/main.js" async defer></script>
   </body>
-  </html>
+</html>
