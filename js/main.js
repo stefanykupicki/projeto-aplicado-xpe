@@ -146,6 +146,8 @@ const addApplicationEvents = () => {
         navigateTo(appRewards);
       } else if (this.id == 'btn-settings') {
         navigateTo(appConfig);
+      } else if (this.id == 'btn-quizz') {
+        navigateTo(appQuiz);
       }
     })
   })
