@@ -45,11 +45,15 @@ class Game {
     const title = document.createElement('h2');
     title.innerText = this.name;
 
+    const play = document.createElement('div')
+  
     const button = document.createElement('button');
     button.innerText = 'jogar';
 
+    play.appendChild(button)
     game.appendChild(img);
     game.appendChild(title);
+    game.appendChild(play)
 
     gamesList.appendChild(game);
 

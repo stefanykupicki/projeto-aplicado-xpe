@@ -73,7 +73,7 @@
   overflow: scroll;
   width: 100%;
   margin: 2rem auto;
-  padding: 0 1rem;
+  padding: 1rem 1rem;
 }
 
 #card-list::-webkit-scrollbar {
@@ -99,22 +99,59 @@
   border-radius: 19px;
   cursor: pointer;
   object-fit: cover;
+  transition: all 0.3s;
+}
+
+.card img:hover {
+  transform: scale(1.1);
+  margin: 0 5px;
 }
 
 /* estilos de lista vertical de games */
 #game-list {
   display: flex;
   flex-direction: column;
-  background-color: blueviolet;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
 }
 
 .game {
+  width: 90vw;
+  height: 89px;
+  border-radius: 10px;
+  padding: 11px;
+  overflow: hidden;
+  background: linear-gradient(45deg, #77c642, #627557);
+  display: flex;
 }
 
 .game img {
+  width: 68px;
+  height: 68px;
 }
 
-.game h3 {
+.game h2 {
+  margin-left: 15px;
+}
+
+.game div{
+  position: absolute;
+  right: 8vw;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  height: 67px;
+}
+
+.game button{
+  width: 80px;
+  height: 34px;
+  text-transform: uppercase;
+  background-color: #ff0000c9;
+  border-radius: 20px;
+  
 }
 
 
