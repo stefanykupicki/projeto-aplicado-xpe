@@ -38,7 +38,6 @@
   height: 55px;
 }
 
-/* Estilos para a div que contém os botões */
 #categories-names {
   text-align: center;
   font-family: "Roboto", sans-serif;
@@ -47,29 +46,21 @@
   background-color: transparent;
   padding: 20px;
 }
-/* Estilos para a div que contém os botões e torná-la flexível */
+
 #buttons {
   display: flex;
-  justify-content: center; /* Centraliza os botões horizontalmente */
-  gap: 10px; /* Espaçamento entre os botões */
-  padding: 10px; /* Espaçamento interno para melhor legibilidade */
-  margin: 0 auto; /* Centraliza o conteúdo na tela */
+  gap: 5px;
   margin-left: 10px;
 }
-.category-button {
-  padding: 10px 20px; /* Tamanho dos botões */
+#category-button {
+  padding: 5px 10px;
   font-size: 14px;
-  background-color: #0a0a0a;
-  color: rgb(254, 252, 252);
+  background-color: #e7385b;
+  color: #fff;
   border: none;
   border-radius: 18px;
   cursor: pointer;
   transition: background-color 0.3s;
-  width: auto; /* Permite que os botões tenham uma largura flexível */
-}
-/* Estilos para os botões quando hover */
-.category-button:hover {
-  background-color: #03e233;
 }
 
 /* estilos de lista de cards horizontal */
