@@ -50,11 +50,12 @@
 /* Estilos para a div que contém os botões e torná-la flexível */
 #buttons {
   display: flex;
-  justify-content: center; /* Centraliza os botões horizontalmente */
+ /* justify-content: center;  Centraliza os botões horizontalmente - usar isso para via web */
   gap: 10px; /* Espaçamento entre os botões */
   padding: 10px; /* Espaçamento interno para melhor legibilidade */
   margin: 0 auto; /* Centraliza o conteúdo na tela */
   margin-left: 10px;
+  overflow: scroll; /*ajustar a tela*/
 }
 .category-button {
   padding: 10px 20px; /* Tamanho dos botões */
@@ -320,4 +321,9 @@ nav ul li div span {
   padding: 1rem;
 }
 
-
+@media screen and (min-width: 1024px){
+  #buttons {
+    justify-content: center;
+    overflow: scroll;
+  }
+}
