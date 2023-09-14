@@ -109,7 +109,7 @@ class Quiz {
 
   start() {
     hide(quizReward);
-    navigateTo(appQuiz);
+    navigateTo(appHome);
     this.questions[0].start(this.next.bind(this));
     this.updateScore();
   }
