@@ -1,25 +1,25 @@
-const cardsList = document.getElementById('card-list');
-const gamesList = document.getElementById('game-list');
-const appbar = document.getElementById('appbar');
-const appHome = document.getElementById('app-home');
-const appRewards = document.getElementById('app-rewards');
-const appConfig = document.getElementById('app-config');
-const appQuiz = document.getElementById('app-quiz');
-const quizQuestion = document.getElementById('quiz-question');
-const quizAnswers = document.getElementById('quiz-answers');
-const appbarList = document.getElementById('appbar-list');
-const quizScoreText = document.getElementById('quiz-score-text');
-const quizRewardText = document.getElementById('quiz-reward-text');
-const quizReward = document.getElementById('quiz-reward');
+const cardsList = document.getElementById("card-list");
+const gamesList = document.getElementById("game-list");
+const appbar = document.getElementById("appbar");
+const appHome = document.getElementById("app-home");
+const appRewards = document.getElementById("app-rewards");
+const appConfig = document.getElementById("app-config");
+const appQuiz = document.getElementById("app-quiz");
+const quizQuestion = document.getElementById("quiz-question");
+const quizAnswers = document.getElementById("quiz-answers");
+const appbarList = document.getElementById("appbar-list");
+const quizScoreText = document.getElementById("quiz-score-text");
+const quizRewardText = document.getElementById("quiz-reward-text");
+const quizReward = document.getElementById("quiz-reward");
 
 // CRIA UM CARD COM IMAGEM E INSERE NA LISTA
 class Card {
   constructor(imageUrl) {
     this.imageUrl = imageUrl;
-    const card = document.createElement('div');
-    card.classList.add('card');
+    const card = document.createElement("div");
+    card.classList.add("card");
 
-    const img = document.createElement('img');
+    const img = document.createElement("img");
     img.src = this.imageUrl;
 
     card.appendChild(img);
@@ -36,28 +36,28 @@ class Game {
     this.name = name;
     this.gameUrl = gameUrl;
 
-    const game = document.createElement('div');
-    game.classList.add('game');
+    const game = document.createElement("div");
+    game.classList.add("game");
 
-    const img = document.createElement('img');
+    const img = document.createElement("img");
     img.src = this.imageUrl;
 
-    const title = document.createElement('h2');
+    const title = document.createElement("h2");
     title.innerText = this.name;
 
-    const play = document.createElement('div')
-  
-    const button = document.createElement('button');
-    button.innerText = 'jogar';
+    const play = document.createElement("div");
 
-    play.appendChild(button)
+    const button = document.createElement("button");
+    button.innerText = "jogar";
+
+    play.appendChild(button);
     game.appendChild(img);
     game.appendChild(title);
-    game.appendChild(play)
+    game.appendChild(play);
 
     gamesList.appendChild(game);
 
-    return game; 
+    return game;
   }
 }
 
@@ -66,10 +66,10 @@ class Answer {
     this.answer = answer;
     this.correct = correct;
 
-    const answerEl = document.createElement('div');
-    answerEl.classList.add('answer');
+    const answerEl = document.createElement("div");
+    answerEl.classList.add("answer");
 
-    const text = document.createElement('p');
+    const text = document.createElement("p");
     text.innerText = this.answer;
 
     answerEl.appendChild(text);
@@ -89,13 +89,13 @@ class Question {
 
     this.answers.forEach((answer) => {
       quizAnswers.appendChild(answer.html);
-      answer.html.addEventListener('click', () => onNext(answer));
+      answer.html.addEventListener("click", () => onNext(answer));
     });
   }
 
   end() {
-    quizQuestion.innerText = '';
-    quizAnswers.innerHTML = '';
+    quizQuestion.innerText = "";
+    quizAnswers.innerHTML = "";
   }
 }
 
@@ -109,7 +109,7 @@ class Quiz {
 
   start() {
     hide(quizReward);
-    navigateTo(appQuiz);
+    navigateTo(appHome);
     this.questions[0].start(this.next.bind(this));
     this.updateScore();
   }
@@ -128,8 +128,10 @@ class Quiz {
 
   end() {
     show(quizReward);
-    quizQuestion.innerText = 'QUIZ FINALIZADO!';
-    quizRewardText.innerText = `🏆 Você ganhou ${this.rightAnswers * 1000} pontos!`;
+    quizQuestion.innerText = "QUIZ FINALIZADO!";
+    quizRewardText.innerText = `🏆 Você ganhou ${
+      this.rightAnswers * 1000
+    } pontos!`;
   }
 
   updateScore() {
@@ -139,71 +141,87 @@ class Quiz {
 
 const addApplicationEvents = () => {
   Array.from(appbarList.children).forEach((button) => {
-    button.addEventListener('click', function () {
-      if (this.id == 'btn-home') {
+    button.addEventListener("click", function () {
+      if (this.id == "btn-home") {
         navigateTo(appHome);
-      } else if (this.id == 'btn-rewards') {
+      } else if (this.id == "btn-rewards") {
         navigateTo(appRewards);
-      } else if (this.id == 'btn-settings') {
+      } else if (this.id == "btn-settings") {
         navigateTo(appConfig);
-      } else if (this.id == 'btn-quizz') {
+      } else if (this.id == "btn-quizz") {
         navigateTo(appQuiz);
       }
-    })
-  })
-}
+    });
+  });
+};
 
 // FUNÇÕES AUXILIARES
 const hide = (element) => {
-  element.classList.add('hidden');
-}
+  element.classList.add("hidden");
+};
 
 const show = (element) => {
-  element.classList.remove('hidden');
-}
+  element.classList.remove("hidden");
+};
 
 const navigateTo = (element) => {
-  const screens = [appHome, appRewards, appConfig, appQuiz]
+  const screens = [appHome, appRewards, appConfig, appQuiz];
   screens.forEach((screen) => hide(screen));
   show(element);
-}
+};
 
 // FUNÇÃO DE INICIALIZAÇÃO DA APLICAÇÃO
 const init = () => {
-  new Card('https://picsum.photos/200/300');
-  new Card('https://picsum.photos/200/300');
-  new Card('https://picsum.photos/200/300');
-  new Card('https://picsum.photos/200/300');
-  new Card('https://picsum.photos/200/300');
-  new Card('https://picsum.photos/200/300');
-  new Card('https://picsum.photos/200/300');
-  new Card('https://picsum.photos/200/300');
-  new Card('https://picsum.photos/200/300');
-  new Card('https://picsum.photos/200/300');
+  new Card("https://picsum.photos/200/300");
+  new Card("https://picsum.photos/200/300");
+  new Card("https://picsum.photos/200/300");
+  new Card("https://picsum.photos/200/300");
+  new Card("https://picsum.photos/200/300");
+  new Card("https://picsum.photos/200/300");
+  new Card("https://picsum.photos/200/300");
+  new Card("https://picsum.photos/200/300");
+  new Card("https://picsum.photos/200/300");
+  new Card("https://picsum.photos/200/300");
 
-  new Game('https://picsum.photos/200/300', 'Jogo 1', 'https://picsum.photos/200/300');
-  new Game('https://picsum.photos/200/300', 'Jogo 2', 'https://picsum.photos/200/300');
-  new Game('https://picsum.photos/200/300', 'Jogo 3', 'https://picsum.photos/200/300');
-  new Game('https://picsum.photos/200/300', 'Jogo 4', 'https://picsum.photos/200/300');
+  new Game(
+    "https://picsum.photos/200/300",
+    "Jogo 1",
+    "https://picsum.photos/200/300"
+  );
+  new Game(
+    "https://picsum.photos/200/300",
+    "Jogo 2",
+    "https://picsum.photos/200/300"
+  );
+  new Game(
+    "https://picsum.photos/200/300",
+    "Jogo 3",
+    "https://picsum.photos/200/300"
+  );
+  new Game(
+    "https://picsum.photos/200/300",
+    "Jogo 4",
+    "https://picsum.photos/200/300"
+  );
 
   const questions = [
-    new Question('Qual é a capital do Brasil?', [
-      new Answer('Rio de Janeiro', false),
-      new Answer('São Paulo', false),
-      new Answer('Brasília', true),
-      new Answer('Belo Horizonte', false),
+    new Question("Qual é a capital do Brasil?", [
+      new Answer("Rio de Janeiro", false),
+      new Answer("São Paulo", false),
+      new Answer("Brasília", true),
+      new Answer("Belo Horizonte", false),
     ]),
-    new Question('Qual é a capital da Argentina?', [
-      new Answer('Rio de Janeiro', false),
-      new Answer('Buenos Aires', true),
-      new Answer('São Paulo', false),
-      new Answer('Belo Horizonte', false),
+    new Question("Qual é a capital da Argentina?", [
+      new Answer("Rio de Janeiro", false),
+      new Answer("Buenos Aires", true),
+      new Answer("São Paulo", false),
+      new Answer("Belo Horizonte", false),
     ]),
-    new Question('Qual é a capital do Chile?', [
-      new Answer('Santiago', true),
-      new Answer('Belo Horizonte', false),
-      new Answer('São Paulo', false),
-      new Answer('Rio de Janeiro', false),
+    new Question("Qual é a capital do Chile?", [
+      new Answer("Santiago", true),
+      new Answer("Belo Horizonte", false),
+      new Answer("São Paulo", false),
+      new Answer("Rio de Janeiro", false),
     ]),
   ];
 
@@ -212,6 +230,47 @@ const init = () => {
   quiz.start();
 
   addApplicationEvents();
-}
+};
 
 init();
+
+const categoryButtons = document.querySelectorAll(".category-button");
+
+// Adicione um ouvinte de evento de clique a cada botão
+categoryButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const category = button.getAttribute("data-category");
+
+    redirectToCategoryPage(category);
+  });
+});
+// Função para redirecionar para a página da categoria com base na categoria selecionada
+
+function redirectToCategoryPage(category) {
+  switch (category) {
+    case "exploracao":
+      window.location.href = "investimentos.html";
+      break;
+    case "contagem":
+      window.location.href = "poupanca.html";
+      break;
+    case "troca":
+      window.location.href = "gestao-financeira.html";
+      break;
+    case "planejamento":
+      window.location.href = "planejamento.html";
+      break;
+    case "simuladores":
+      window.location.href = "simuladores.html";
+      break;
+    case "gestao":
+      window.location.href = "gestao.html";
+      break;
+    case "desafios":
+      window.location.href = "desafios.html";
+      break;
+    default:
+      // Redirecionar para uma página padrão ou exibir uma mensagem de erro
+      window.location.href = "pagina-padrao.html";
+  }
+}
