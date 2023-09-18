@@ -6,7 +6,9 @@
     <title>PA Boilerplate</title>
     
     <link rel="stylesheet" href="css/style.css" />
-   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
     <script type="module" src="js/main.js" async defer></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
   </head>
@@ -69,10 +71,9 @@
     </div>
     <!-- QUIZ -->
     <div id="app-quiz" class="hidden">
-      <div id="header">
-        <div>
-          <h1>LOGO?</h1>
-        </div>
+      <div id="header-telesena">
+        <img width="80px" src="https://pbs.twimg.com/media/EfdgG8LX0AEVzw6.jpg" />
+        <h3>Quizes Premiados</h3>
       </div>
       <div id="quiz-container">
         <h1 id="quiz-question">PERGUNTA MAGICA DO QUIZ?</h1>
@@ -85,6 +86,17 @@
         </div>
       </div>
     </div>
+    <!-- QUIZ-LIST -->
+    <div id="app-quiz-list" class="hidden">
+      <div id="header-telesena">
+          <img width="80px" src="https://pbs.twimg.com/media/EfdgG8LX0AEVzw6.jpg" />
+          <h3>Quizes Premiados</h3>
+      </div>
+      <div id="quiz-list-container">
+        <ul id="quiz-list">
+        </ul>
+      </div>
+    </div>
 
     <!-- NAV BAR -->
     <nav id="appbar">
@@ -93,7 +105,7 @@
           <div><span> Home </span><i class="ri-home-5-line"></i></div>
         </li>
         <li id="btn-quizz">
-          <div><span> Quizz </span><i class="ri-gamepad-line"></i></div>
+          <div><span> Quiz </span><i class="ri-gamepad-line"></i></div>
         </li>
         <li id="btn-rewards">
           <div><span> Rewards </span><i class="ri-store-2-line"></i></div>
