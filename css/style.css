@@ -145,7 +145,7 @@
   margin-left: 15px;
 }
 
-.game div{
+.game div {
   position: absolute;
   right: 8vw;
   display: flex;
@@ -155,15 +155,13 @@
   height: 67px;
 }
 
-.game button{
+.game button {
   width: 80px;
   height: 34px;
   text-transform: uppercase;
   background-color: #ff0000c9;
   border-radius: 20px;
-  
 }
-
 
 /* Alterações pensando no #appbar, pode ser alterado futuramente. */
 
@@ -321,7 +319,7 @@ nav ul li div span {
   padding: 1rem;
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1024px) {
   #buttons {
     justify-content: center;
     overflow: scroll;
