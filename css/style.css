@@ -51,7 +51,7 @@
 /* Estilos para a div que contém os botões e torná-la flexível */
 #buttons {
   display: flex;
-  /* justify-content: center;  Centraliza os botões horizontalmente - usar isso para via web */
+ /* justify-content: center;  Centraliza os botões horizontalmente - usar isso para via web */
   gap: 10px; /* Espaçamento entre os botões */
   padding: 10px; /* Espaçamento interno para melhor legibilidade */
   margin: 0 auto; /* Centraliza o conteúdo na tela */
