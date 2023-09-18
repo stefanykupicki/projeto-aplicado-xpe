@@ -5,12 +5,14 @@ const appHome = document.getElementById("app-home");
 const appRewards = document.getElementById("app-rewards");
 const appConfig = document.getElementById("app-config");
 const appQuiz = document.getElementById("app-quiz");
+const appQuizList = document.getElementById("app-quiz-list");
 const quizQuestion = document.getElementById("quiz-question");
 const quizAnswers = document.getElementById("quiz-answers");
 const appbarList = document.getElementById("appbar-list");
 const quizScoreText = document.getElementById("quiz-score-text");
 const quizRewardText = document.getElementById("quiz-reward-text");
 const quizReward = document.getElementById("quiz-reward");
+const quizList = document.getElementById("quiz-list");
 
 // CRIA UM CARD COM IMAGEM E INSERE NA LISTA
 class Card {
@@ -99,11 +101,39 @@ class Question {
   }
 }
 
+class QuizList {
+
+  constructor(quizes) {
+    this.quizes = quizes;
+
+    this.populateHtml();
+  }
+
+  populateHtml() {
+    this.quizes.forEach((quiz) => {
+      const quizEl = document.createElement("li");
+
+      const quizTitle = document.createElement("h2");
+      quizTitle.innerText = quiz.title;
+      
+      quizEl.appendChild(quizTitle);
+
+      quizEl.addEventListener("click", () => {
+        quiz.start();
+        navigateTo(appQuiz);
+      });
+
+      quizList.appendChild(quizEl);
+    })
+  }
+}
+
 class Quiz {
   currentQuestion = 0;
   rightAnswers = 0;
 
-  constructor(questions) {
+  constructor(title, questions) {
+    this.title = title;
     this.questions = questions;
   }
 
@@ -149,7 +179,7 @@ const addApplicationEvents = () => {
       } else if (this.id == "btn-settings") {
         navigateTo(appConfig);
       } else if (this.id == "btn-quizz") {
-        navigateTo(appQuiz);
+        navigateTo(appQuizList);
       }
     });
   });
@@ -165,7 +195,7 @@ const show = (element) => {
 };
 
 const navigateTo = (element) => {
-  const screens = [appHome, appRewards, appConfig, appQuiz];
+  const screens = [appHome, appRewards, appConfig, appQuiz, appQuizList];
   screens.forEach((screen) => hide(screen));
   show(element);
 };
@@ -225,7 +255,9 @@ const init = () => {
     ]),
   ];
 
-  const quiz = new Quiz(questions);
+  const quiz = new Quiz("Quiz das Capitais", questions);
+
+  const quizList = new QuizList([quiz, quiz, quiz, quiz, quiz, quiz, quiz, quiz, quiz]);
 
   quiz.start();
 

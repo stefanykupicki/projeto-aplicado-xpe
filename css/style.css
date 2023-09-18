@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'PT Sans Caption', sans-serif;
 }
 
 .hidden {
@@ -10,7 +11,7 @@
 
 /* estilos de header  */
 #header {
-  background-color: transparent;
+  background-color: #00000021;
 }
 
 #icons-div {
@@ -86,16 +87,16 @@
   padding: 1rem 1rem;
 }
 
-#card-list::-webkit-scrollbar {
+*::-webkit-scrollbar {
   width: 2px;
   height: 2px;
 }
 
-#card-list::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
 
-#card-list::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
   background: purple;
 }
 
@@ -134,6 +135,7 @@
   overflow: hidden;
   background: linear-gradient(45deg, #77c642, #627557);
   display: flex;
+  cursor: pointer;
 }
 
 .game img {
@@ -161,6 +163,19 @@
   text-transform: uppercase;
   background-color: #ff0000c9;
   border-radius: 20px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.game button:hover {
+  background-color: #ff0000;
+}
+
+.game:hover {
+  background: linear-gradient(45deg, #77c642, #627557);
+  transform: scale(1.01);
+  margin: 0 5px;
 }
 
 /* Alterações pensando no #appbar, pode ser alterado futuramente. */
@@ -317,6 +332,53 @@ nav ul li div span {
   font-size: 2rem;
   font-weight: bold;
   padding: 1rem;
+}
+
+#header-telesena {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: orangered;
+}
+
+#quiz-list-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#quiz-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 2rem;
+  gap: 1rem;
+  list-style: none;
+  width: 100%;
+  background: orange;
+  min-height: 100vh;
+}
+
+#quiz-list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: #e7385b;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.8s;
+  width: 50%;
+  border: 1px solid #e7385b;
+}
+
+#quiz-list li:hover {
+  background-color: #c91d3f;
+  border: 1px solid #e94423;
 }
 
 @media screen and (min-width: 1024px) {
