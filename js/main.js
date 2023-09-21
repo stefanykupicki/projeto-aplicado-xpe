@@ -102,7 +102,6 @@ class Question {
 }
 
 class QuizList {
-
   constructor(quizes) {
     this.quizes = quizes;
 
@@ -115,7 +114,7 @@ class QuizList {
 
       const quizTitle = document.createElement("h2");
       quizTitle.innerText = quiz.title;
-      
+
       quizEl.appendChild(quizTitle);
 
       quizEl.addEventListener("click", () => {
@@ -124,7 +123,7 @@ class QuizList {
       });
 
       quizList.appendChild(quizEl);
-    })
+    });
   }
 }
 
@@ -202,37 +201,33 @@ const navigateTo = (element) => {
 
 // FUNÇÃO DE INICIALIZAÇÃO DA APLICAÇÃO
 const init = () => {
-  new Card("https://picsum.photos/200/300");
-  new Card("https://picsum.photos/200/300");
-  new Card("https://picsum.photos/200/300");
-  new Card("https://picsum.photos/200/300");
-  new Card("https://picsum.photos/200/300");
-  new Card("https://picsum.photos/200/300");
-  new Card("https://picsum.photos/200/300");
-  new Card("https://picsum.photos/200/300");
-  new Card("https://picsum.photos/200/300");
-  new Card("https://picsum.photos/200/300");
+  new Card("./img/game_img1.jpg");
+  new Card("./img/game_img1.png");
+  new Card("./img/game_img2.jpg");
+  new Card("./img/game_img2.png");
+  new Card("./img/game_img3.jpg");
+  new Card("./img/game_img4.jpg");
+  new Card("./img/game_img5.jpg");
+  new Card("./img/game_img6.png");
+  new Card("./img/game_img7.png");
+  new Card("./img/game_img8.png");
 
   new Game(
-    "https://picsum.photos/200/300",
-    "Jogo 1",
+    "./img/game_img8.png",
+    "Dark coins",
     "https://picsum.photos/200/300"
   );
   new Game(
-    "https://picsum.photos/200/300",
-    "Jogo 2",
+    "./img/game_img7.png",
+    "Navio pirata",
     "https://picsum.photos/200/300"
   );
   new Game(
-    "https://picsum.photos/200/300",
-    "Jogo 3",
+    "./img/game_img6.png",
+    "Corrida do ouro",
     "https://picsum.photos/200/300"
   );
-  new Game(
-    "https://picsum.photos/200/300",
-    "Jogo 4",
-    "https://picsum.photos/200/300"
-  );
+  new Game("./img/game_img5.jpg", "Trust", "https://picsum.photos/200/300");
 
   const questions = [
     new Question("Qual é a capital do Brasil?", [
@@ -257,7 +252,17 @@ const init = () => {
 
   const quiz = new Quiz("Quiz das Capitais", questions);
 
-  const quizList = new QuizList([quiz, quiz, quiz, quiz, quiz, quiz, quiz, quiz, quiz]);
+  const quizList = new QuizList([
+    quiz,
+    quiz,
+    quiz,
+    quiz,
+    quiz,
+    quiz,
+    quiz,
+    quiz,
+    quiz,
+  ]);
 
   quiz.start();
 
