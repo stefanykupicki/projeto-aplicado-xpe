@@ -3,20 +3,21 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "PT Sans Caption", sans-serif;
+  font-size: 15px;
 }
 
+body{
+background-color: #000000;
+}
 .hidden {
   display: none !important;
-}
-
-/* estilos de header  */
-#header {
 }
 
 #icons-div {
   display: flex;
   justify-content: space-between;
   margin-top: 40px;
+  align-items: center;
 }
 
 #logo-img {
@@ -28,14 +29,15 @@
 #app-name {
   display: flex;
   justify-content: center;
-  font-size: 20px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px;
+  font-family: system-ui;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #0bd438;
 }
 
-#notification-icon {
-  margin-right: 20px;
-  width: 55px;
-  height: 55px;
+#ghost {
+  width: 65px;
 }
 
 /* Estilos para a div que contém os botões */
@@ -70,7 +72,7 @@
 }
 /* Estilos para os botões quando hover */
 .category-button:hover {
-  background-color: #03e233;
+  background-color: #0db438;
 }
 
 /* estilos de lista de cards horizontal */
@@ -96,7 +98,7 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background: purple;
+  background: #0db438;
 }
 
 /* estilos do card */
@@ -133,7 +135,7 @@
   border-radius: 10px;
   padding: 11px;
   overflow: hidden;
-  background: linear-gradient(45deg, #77c642, #627557);
+  background: linear-gradient(45deg, #57992b, #64f688);
   display: flex;
   cursor: pointer;
 }
@@ -161,15 +163,15 @@
   width: 80px;
   height: 34px;
   text-transform: uppercase;
-  background-color: #ff0000c9;
+  background-color: #0f2917;
   border-radius: 20px;
   outline: none;
   border: none;
-  cursor: pointer;
+  color:#fff
 }
 
 .game button:hover {
-  background-color: #ff0000;
+  background-color: #0f2917;
 }
 
 .game:hover {
@@ -199,7 +201,7 @@ nav {
   position: fixed;
   bottom: 0;
   left: 0;
-  background-color: #13600d;
+  background-color: #0bd438;
   border-radius: 60px 60px 0 0;
   box-shadow: rgb(50 50 93 / 25%) 0 50px 100px -20px,
     rgb(0, 0, 0 / 30%) 0 30px 60px -30px;
@@ -234,7 +236,7 @@ nav ul li div:hover {
 
 /* Tamanho da letra do nav bar */
 nav ul li div span {
-  font-size: 20px;
+  font-size: 15px;
 }
 
 #appbar button {
@@ -261,7 +263,7 @@ nav ul li div span {
   align-items: center;
   justify-content: flex-start;
   gap: 2rem;
-  background-color: lightblue;
+  background-color: rgb(0, 0, 0);
   height: 100vh;
 }
 
@@ -271,7 +273,7 @@ nav ul li div span {
   width: 50%;
   padding: 1rem;
   border-radius: 1rem;
-  background-color: #e7385b;
+  background-color: #0f2917;
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -291,17 +293,17 @@ nav ul li div span {
 .answer {
   padding: 1rem;
   border-radius: 1rem;
-  background-color: #e7385b;
+  background-color: #0f2917;
   color: #fff;
   cursor: pointer;
   transition: all 0.8s;
   width: 50%;
-  border: 1px solid #e7385b;
+  border: 1px solid #82f5a1;
 }
 
 .answer:hover {
-  background-color: #c91d3f;
-  border: 1px solid #e94423;
+  background-color: #82f5a1;
+  border: 1px solid #0bd438;
 }
 
 #quiz-score {
@@ -309,7 +311,7 @@ nav ul li div span {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  background: orange;
+  background: #0bd438;
   border-radius: 1rem;
 }
 
@@ -324,7 +326,7 @@ nav ul li div span {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  background: orangered;
+  background: #0bd438;
   border-radius: 1rem;
 }
 
@@ -339,7 +341,9 @@ nav ul li div span {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  background-color: orangered;
+  background-color: black;
+  color: #0bd438;
+  font-size: 25px;
 }
 
 #quiz-list-container {
@@ -357,7 +361,7 @@ nav ul li div span {
   gap: 1rem;
   list-style: none;
   width: 100%;
-  background: orange;
+  background: black;
   min-height: 100vh;
 }
 
@@ -366,19 +370,19 @@ nav ul li div span {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  background-color: #e7385b;
+  background-color: #0bd438;
   color: #fff;
   padding: 1rem;
   border-radius: 1rem;
   cursor: pointer;
   transition: all 0.8s;
   width: 50%;
-  border: 1px solid #e7385b;
+  border: 1px solid #82f5a1;
 }
 
 #quiz-list li:hover {
-  background-color: #c91d3f;
-  border: 1px solid #e94423;
+  background-color: #82f5a1;
+  border: 1px solid #ffffff;
 }
 
 @media screen and (min-width: 1024px) {
