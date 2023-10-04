@@ -6,8 +6,8 @@
   font-size: 15px;
 }
 
-body{
-background-color: #000000;
+body {
+  background-color: #000000;
 }
 .hidden {
   display: none !important;
@@ -15,15 +15,13 @@ background-color: #000000;
 
 #icons-div {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 40px;
   align-items: center;
 }
 
 #logo-img {
-  width: 65px;
-  height: 65px;
-  margin-left: 25px;
+  width: 275px;
 }
 
 #app-name {
@@ -167,7 +165,7 @@ background-color: #000000;
   border-radius: 20px;
   outline: none;
   border: none;
-  color:#fff
+  color: #fff;
 }
 
 .game button:hover {
